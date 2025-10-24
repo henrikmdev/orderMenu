@@ -15,6 +15,7 @@ int main() {
     int myInt = 42;        // Variable to track the user's menu selection
     double myDouble = 0.00; // Variable to track the total bill
     char myString[50];     // Array to hold the user's name
+    int quantity;
     char dummy;
 
     // Ask the user for their name
@@ -31,15 +32,19 @@ int main() {
         printf("Please enter the number corresponding to your food choice (1, 2, or 3): ");
         scanf("%d", &myInt);
 
+        // Ask for quantity
+        printf("How many would you like? ");
+        scanf("%d", &quantity);
+
         // Process the order based on the user's choice
         if (myInt == 1) {
-            myDouble = myDouble + 9.99;
+            myDouble = myDouble + (9.99*quantity);
             printf("You ordered a pizza. Your bill so far is $%.2f\n", myDouble);
         } else if (myInt == 2) {
-            myDouble = myDouble + 4.99;
+            myDouble = myDouble + (4.99*quantity);
             printf("You ordered a cheeseburger. Your bill so far is $%.2f\n", myDouble);
         } else if (myInt == 3) {
-            myDouble = myDouble + 2.99;
+            myDouble = myDouble + (2.99*quantity);
             printf("You ordered a hotdog. Your bill so far is $%.2f\n", myDouble);
         } else if (myInt != 0) {
             printf("You didn't give a valid selection...\n");
