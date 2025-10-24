@@ -16,6 +16,7 @@ int main() {
     double myDouble = 0.00; // Variable to track the total bill
     char myString[50];     // Array to hold the user's name
     int quantity;
+    char dummy;
 
     // Ask the user for their name
     printf("Please enter your name: ");
@@ -48,6 +49,11 @@ int main() {
         } else if (myInt != 0) {
             printf("You didn't give a valid selection...\n");
         }
+
+        // Ask user to acknowledge before continuing
+        printf("\nPress Enter to continue...");
+        scanf("%c", &dummy); // Consume leftover newline
+        getchar(); // Wait for Enter
     }
 
     // Print the final bill
